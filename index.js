@@ -1,6 +1,7 @@
-var parseString = require("xml2js").parseString;
-const cheerio = require("cheerio");
-fs = require("fs");
+import { parseString } from "xml2js";
+import cheerio from "cheerio";
+import fs from "fs";
+import fetch from "node-fetch";
 
 async function main() {
   const source = "https://berita.murungrayakab.go.id/feed/";

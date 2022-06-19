@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.11",
+    "node-fetch": "^3.2.6",
     "pretty": "^2.0.0",
     "xml2js": "^0.4.23"
   }
