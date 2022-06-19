@@ -1,0 +1,14 @@
+{
+  "name": "rss-murungraya",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.11",
+    "pretty": "^2.0.0",
+    "xml2js": "^0.4.23"
+  }
+}
