@@ -17,7 +17,12 @@ async function main() {
 
   let listImgSrc = [];
 
+  let id = 0;
+
   const arrContent = item.map((i) => {
+    const title = i["title"][0];
+    const link = i["link"][0];
+
     const joinText = i["content:encoded"].join();
     const loadHtml = cheerio.load(joinText, null, false);
     const images = loadHtml("img");
@@ -28,7 +33,9 @@ async function main() {
       sementara.push(elem.attribs.src);
     });
 
-    listImgSrc = [...listImgSrc, ...sementara];
+    listImgSrc = [...listImgSrc, { id, title, link, images: sementara }];
+
+    id = id + 1;
 
     return sementara;
   });
@@ -36,11 +43,11 @@ async function main() {
   console.log(listImgSrc);
   console.log(listImgSrc.length);
 
-  fs.writeFile("./img.txt", JSON.stringify(listImgSrc), function (err) {
+  fs.writeFile("./img.json", JSON.stringify(listImgSrc), function (err) {
     if (err) {
       console.log(err);
     } else {
-      console.log("Output saved to /img.txt");
+      console.log("Output saved to /img.json");
     }
   });
 }
